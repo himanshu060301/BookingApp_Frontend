@@ -20,8 +20,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "npm run build",
+    "start": "set HTTPS=true && react-scripts start",
+    "build": "react-scripts build",
     "test": "npm run test",
     "eject": "npm run eject"
   },
