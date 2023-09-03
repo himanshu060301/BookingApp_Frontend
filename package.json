@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm run build",
+    "build": "react-scripts build",
     "test": "npm run test",
     "eject": "npm run eject"
   },
@@ -43,5 +43,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:8800/server/"
+  "proxy": "https://booking-server-skbm.onrender.com"
 }
