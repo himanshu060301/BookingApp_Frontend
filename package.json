@@ -43,5 +43,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://booking-server-edd0.onrender.com/server"
+  "proxy": "https://booking-server-edd0.onrender.com/api"
 }
