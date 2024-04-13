@@ -17,6 +17,7 @@ import { SearchContext } from "../../context/SearchContext";
 import { AuthContext } from "../../context/AuthContext";
 import Reserve from "../../components/reserve/Reserve";
 
+const baseURL = process.env.REACT_APP_BACKEND_URL;
 
 const Hotel = () => {
   const location=useLocation();
@@ -25,7 +26,7 @@ const Hotel = () => {
   const [open, setOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
 
-  const {data,loading,error}=useFetch(`/hotels/find/${id}`);
+  const {data,loading,error}=useFetch(`${baseURL}/hotels/find/${id}`);
   const {dates,options}=useContext(SearchContext);
   const {user}=useContext(AuthContext);
   const navigate=useNavigate();

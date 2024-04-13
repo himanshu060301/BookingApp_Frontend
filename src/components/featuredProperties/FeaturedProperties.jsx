@@ -2,8 +2,10 @@ import useFetch from "../../hooks/useFetch.js";
 import "./featuredProperties.css";
 
 const FeaturedProperties = () => {
+  const baseURL = process.env.REACT_APP_BACKEND_URL;
+
   //hotels?featured=true&limit=4
-  const {data,loading,error}=useFetch("/hotels?featured=true");
+  const {data,loading,error}=useFetch(`${baseURL}/hotels?featured=true`);
   return (
     <div className="fp">
       {loading ? (

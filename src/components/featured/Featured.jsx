@@ -2,9 +2,10 @@ import useFetch from "../../hooks/useFetch.js";
 import "./featured.css";
 
 const Featured = () => {
+  const baseURL = process.env.REACT_APP_BACKEND_URL;
 
-  const {data,loading,error}=useFetch("/hotels/countByCity?cities=berlin,madrid,london");
-  console.log(data);
+  const {data,loading,error}=useFetch(`${baseURL}/hotels/countByCity?cities=berlin,madrid,london`);
+  
   return (
     <div className="featured">
       {loading ? ("Loading please wait"

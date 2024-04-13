@@ -8,8 +8,10 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const Reserve = ({ setOpen, hotelId }) => {
+    const baseURL = process.env.REACT_APP_BACKEND_URL;
+
     const [selectedRooms, setSelectedRooms] = useState([]);
-    const { data, loading, error } = useFetch(`/hotels/room/${hotelId}`);
+    const { data, loading, error } = useFetch(`${baseURL}/hotels/room/${hotelId}`);
     const { dates } = useContext(SearchContext);
 
     const getDatesInRange = (startDate, endDate) => {
@@ -52,7 +54,7 @@ const Reserve = ({ setOpen, hotelId }) => {
         try {
           await Promise.all(
             selectedRooms.map((roomId) => {
-              const res = axios.put(`/rooms/availability/${roomId}`, {
+              const res = axios.put(`${baseURL}/rooms/availability/${roomId}`, {
                 dates: alldates,
               });
               return res.data;

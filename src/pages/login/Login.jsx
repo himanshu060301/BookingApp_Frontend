@@ -13,6 +13,7 @@ const Login = () => {
   const { loading, error, dispatch } = useContext(AuthContext);
 
   const navigate = useNavigate()
+  const baseURL = process.env.REACT_APP_BACKEND_URL;
 
   const handleChange = (e) => {
     console.log(e.target.value);
@@ -23,10 +24,11 @@ const Login = () => {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
     try {
-      const res = await axios.post("/auth/login", credentials);
+      const res = await axios.post(`${baseURL}/auth/login`, credentials);
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
       navigate("/home");
     } catch (err) {
+      console.log("Error in login");
       dispatch({ type: "LOGIN_FAILURE", payload: err.response.data });
     }
   };
