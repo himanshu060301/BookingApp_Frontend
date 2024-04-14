@@ -38,14 +38,14 @@ const Login = () => {
       <div className="lContainer">
         <input
           type="text"
-          placeholder="username"
+          placeholder="Used Harsh06 to login"
           id="username"
           onChange={handleChange}
           className="lInput"
         />
         <input
           type="password"
-          placeholder="password"
+          placeholder="Used abc123@ to login"
           id="password"
           onChange={handleChange}
           className="lInput"
