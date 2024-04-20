@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext.js";
 import "./login.css";
 
@@ -36,6 +36,7 @@ const Login = () => {
   return (
     <div className="login">
       <div className="lContainer">
+      <h3>Log in to Explore</h3>
         <input
           type="text"
           placeholder="Used Harsh06 to login"
@@ -50,9 +51,14 @@ const Login = () => {
           onChange={handleChange}
           className="lInput"
         />
-        <button disabled={loading} onClick={handleClick} className="lButton">
-          Login
-        </button>
+        <div className="Button">
+          <button disabled={loading} onClick={handleClick} className="btn">
+            Login
+          </button>
+          <Link to="/register"><button disabled={loading} className="btn">
+            Sign In
+          </button></Link>
+        </div>
         {error && <span>{error.message}</span>}
       </div>
     </div>
