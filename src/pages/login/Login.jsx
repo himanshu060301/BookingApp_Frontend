@@ -39,14 +39,14 @@ const Login = () => {
       <h3>Log in to Explore</h3>
         <input
           type="text"
-          placeholder="Used Harsh06 to login"
+          placeholder="Username"
           id="username"
           onChange={handleChange}
           className="lInput"
         />
         <input
           type="password"
-          placeholder="Used abc123@ to login"
+          placeholder="Password"
           id="password"
           onChange={handleChange}
           className="lInput"
