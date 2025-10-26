@@ -13,7 +13,7 @@ const Featured = () => {
       <>
       <div className="featuredItem">
         <img
-          src="https://cf.bstatic.com/xdata/images/city/max500/957801.webp?k=a969e39bcd40cdcc21786ba92826063e3cb09bf307bcfeac2aa392b838e9b7a5&o="
+          src="https://media.istockphoto.com/id/452534461/photo/berlin-cityscape.jpg?s=612x612&w=0&k=20&c=pWLDEGydN11rAU-PRZ1fmmwc771JJ7HsvBSLIyfQryA="
           alt=""
           className="featuredImg"
         />

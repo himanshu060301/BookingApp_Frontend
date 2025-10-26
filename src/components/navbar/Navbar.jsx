@@ -4,12 +4,12 @@ import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 const Navbar = () => {
   const { user } = useContext(AuthContext);
-  //console.log(user);
+  
   return (
     <div className="navbar">
       <div className="navContainer">
         <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
-        <span className="logo">Algorithmic Escape Lodge</span>
+        <span className="logo">Escape Lodge</span>
         </Link>
         {user ? user.username : (
           <div className="navItems">

@@ -2,6 +2,7 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import { Link,useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext.js";
+import toast from "react-hot-toast";
 import "./login.css";
 
 const Login = () => {
@@ -16,12 +17,32 @@ const Login = () => {
   const baseURL = process.env.REACT_APP_BACKEND_URL;
 
   const handleChange = (e) => {
-    console.log(e.target.value);
     setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
   const handleClick = async (e) => {
     e.preventDefault();
+    const usernameRegex = /^[a-zA-Z0-9_]{3,16}$/;
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+    if(!credentials.username?.trim()){
+      toast.error('Enter the username');
+      return;
+    }
+    else if(!usernameRegex.test(credentials.username)){
+      toast.error('Invalid username');
+      return;
+    }
+
+    if(!credentials.password?.trim()){
+      toast.error('Enter the password');
+      return;
+    }
+    else if(!passwordRegex.test(credentials.password)){
+      toast.error('Invalid password value');
+      return;
+    }
+
     dispatch({ type: "LOGIN_START" });
     try {
       const res = await axios.post(`${baseURL}/auth/login`, credentials);
